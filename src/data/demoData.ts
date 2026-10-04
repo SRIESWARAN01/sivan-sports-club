@@ -552,13 +552,22 @@ export const INITIAL_EVENTS: ClubEvent[] = [
 
 export const INITIAL_GALLERY: GalleryImage[] = [
   {
+    id: 'gal_00',
+    title: 'Sivan Sportz Club Official Outdoor Illuminated Signboard',
+    category: 'Club',
+    imageUrl: '/images/sivan_sports_signboard.jpg',
+    isFeatured: true,
+    active: true,
+    order: 1
+  },
+  {
     id: 'gal_01',
     title: 'Rayan Sports Academy Badminton Official Signboard',
     category: 'Badminton',
     imageUrl: '/images/rayan_badminton_board.jpg',
     isFeatured: true,
     active: true,
-    order: 1
+    order: 2
   },
   {
     id: 'gal_02',
