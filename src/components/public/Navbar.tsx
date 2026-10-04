@@ -15,9 +15,10 @@ import { BrandLogo } from '../common/BrandLogo';
 interface NavbarProps {
   onOpenEnquiry: (facility?: string) => void;
   onOpenAdmin: () => void;
+  onReplayIntro?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry, onOpenAdmin }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry, onOpenAdmin, onReplayIntro }) => {
   const { websiteContent, notifications } = useDatabase();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -46,7 +47,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry, onOpenAdmin }) =>
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled 
           ? 'bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80 shadow-2xl py-3' 
           : 'bg-gradient-to-b from-slate-950/90 via-slate-950/50 to-transparent py-5'
@@ -55,23 +56,32 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry, onOpenAdmin }) =>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Brand Logo */}
-          <a href="#home" className="flex items-center gap-3 group">
-            <BrandLogo className="w-12 h-12 group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_12px_rgba(234,179,8,0.35)] shrink-0" />
-            <div>
-              <div className="font-heading font-black text-lg sm:text-xl tracking-wider text-white flex items-center gap-1.5">
-                <span>SIVAN SPORTZ</span>
-                <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-semibold tracking-normal">
-                  CUMBUM
-                </span>
+          {/* Brand Logo with Click to Replay Intro */}
+          <div className="flex items-center gap-3">
+            <button 
+              onClick={() => {
+                if (onReplayIntro) onReplayIntro();
+                else window.location.hash = 'home';
+              }} 
+              className="flex items-center gap-3 group text-left cursor-pointer focus:outline-none"
+              title="Click to replay official animated logo intro"
+            >
+              <BrandLogo className="w-12 h-12 group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_12px_rgba(234,179,8,0.35)] shrink-0" />
+              <div>
+                <div className="font-heading font-black text-lg sm:text-xl tracking-wider text-white flex items-center gap-1.5">
+                  <span>SIVAN SPORTZ</span>
+                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-semibold tracking-normal">
+                    CUMBUM
+                  </span>
+                </div>
+                <div className="text-[10px] tracking-wider text-slate-400 font-medium uppercase flex items-center gap-1">
+                  <span className="text-amber-400 font-sans font-semibold">சிவன் ஸ்போர்ட்ஸ் கிளப்</span>
+                  <span>•</span>
+                  <span>Theni Dist</span>
+                </div>
               </div>
-              <div className="text-[10px] tracking-wider text-slate-400 font-medium uppercase flex items-center gap-1">
-                <span className="text-amber-400 font-sans font-semibold">சிவன் ஸ்போர்ட்ஸ் கிளப்</span>
-                <span>•</span>
-                <span>Theni Dist</span>
-              </div>
-            </div>
-          </a>
+            </button>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden xl:flex items-center gap-6">

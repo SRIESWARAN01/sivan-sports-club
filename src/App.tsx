@@ -9,9 +9,9 @@ const AppContent: React.FC = () => {
   const { currentAdminUser, logout } = useDatabase();
   const [currentView, setCurrentView] = useState<'public' | 'admin-login' | 'admin-dashboard'>('public');
   const [showIntro, setShowIntro] = useState<boolean>(() => {
-    // Only show intro animation once per session, and only if not directly navigating to #admin
-    if (window.location.hash.startsWith('#admin')) return false;
-    return !sessionStorage.getItem('sivan_intro_shown');
+    // Play intro animation whenever the website is opened (unless deep-linking to #admin)
+    if (typeof window !== 'undefined' && window.location.hash.startsWith('#admin')) return false;
+    return true;
   });
 
   // Listen to hash changes for easy deep linking (#admin or #login)
@@ -83,12 +83,14 @@ const AppContent: React.FC = () => {
       {showIntro && (
         <IntroAnimation
           onComplete={() => {
-            sessionStorage.setItem('sivan_intro_shown', 'true');
             setShowIntro(false);
           }}
         />
       )}
-      <PublicWebsite onOpenAdmin={handleOpenAdmin} />
+      <PublicWebsite 
+        onOpenAdmin={handleOpenAdmin} 
+        onReplayIntro={() => setShowIntro(true)} 
+      />
     </>
   );
 };

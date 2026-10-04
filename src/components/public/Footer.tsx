@@ -6,9 +6,10 @@ import { BrandLogo } from '../common/BrandLogo';
 
 interface FooterProps {
   onOpenAdmin: () => void;
+  onReplayIntro?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenAdmin, onReplayIntro }) => {
   const { websiteContent } = useDatabase();
 
   const scrollToTop = () => {
@@ -23,8 +24,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
           
           {/* Brand Info */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <BrandLogo className="w-12 h-12 shrink-0 drop-shadow-[0_0_12px_rgba(234,179,8,0.25)]" />
+            <button 
+              onClick={() => {
+                if (onReplayIntro) onReplayIntro();
+                else scrollToTop();
+              }}
+              className="flex items-center gap-3 text-left group cursor-pointer focus:outline-none"
+              title="Click to replay official animated logo intro"
+            >
+              <BrandLogo className="w-12 h-12 shrink-0 drop-shadow-[0_0_12px_rgba(234,179,8,0.25)] group-hover:scale-105 transition-transform" />
               <div>
                 <span className="font-heading font-black text-xl text-white tracking-wider">
                   SIVAN SPORTZ CLUB
@@ -35,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
                   <span>Cumbum</span>
                 </div>
               </div>
-            </div>
+            </button>
 
             <p className="text-slate-400 text-sm max-w-sm leading-relaxed">
               "Play. Train. Celebrate. Live Better."
@@ -100,6 +108,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
               <li><a href="#pool" className="hover:text-emerald-400 transition-colors">Swimming Pool</a></li>
               <li><a href="#events" className="hover:text-emerald-400 transition-colors">Party Hall & Banquets</a></li>
               <li><a href="#gallery" className="hover:text-emerald-400 transition-colors">Photo Gallery</a></li>
+              {onReplayIntro && (
+                <li>
+                  <button 
+                    onClick={onReplayIntro}
+                    className="text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-1.5 font-medium cursor-pointer"
+                  >
+                    <span>✨ Replay Intro Animation</span>
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
 

@@ -17,9 +17,10 @@ import { Footer } from './Footer';
 
 interface PublicWebsiteProps {
   onOpenAdmin: () => void;
+  onReplayIntro?: () => void;
 }
 
-export const PublicWebsite: React.FC<PublicWebsiteProps> = ({ onOpenAdmin }) => {
+export const PublicWebsite: React.FC<PublicWebsiteProps> = ({ onOpenAdmin, onReplayIntro }) => {
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
   const [selectedFacility, setSelectedFacility] = useState<string | undefined>(undefined);
 
@@ -33,7 +34,8 @@ export const PublicWebsite: React.FC<PublicWebsiteProps> = ({ onOpenAdmin }) => 
       {/* Sticky Navigation */}
       <Navbar 
         onOpenEnquiry={() => handleOpenEnquiry()} 
-        onOpenAdmin={onOpenAdmin} 
+        onOpenAdmin={onOpenAdmin}
+        onReplayIntro={onReplayIntro} 
       />
 
       {/* Main Sections */}
@@ -53,7 +55,7 @@ export const PublicWebsite: React.FC<PublicWebsiteProps> = ({ onOpenAdmin }) => 
       </main>
 
       {/* Footer */}
-      <Footer onOpenAdmin={onOpenAdmin} />
+      <Footer onOpenAdmin={onOpenAdmin} onReplayIntro={onReplayIntro} />
 
       {/* Interactive Booking & Enquiry Modal */}
       <EnquiryModal
