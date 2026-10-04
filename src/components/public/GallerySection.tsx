@@ -61,6 +61,13 @@ export const GallerySection: React.FC = () => {
                 alt={img.title}
                 className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
+                onError={(e) => {
+                  if (img.category === 'Badminton') e.currentTarget.src = 'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=1000&q=80';
+                  else if (img.category === 'Swimming Pool') e.currentTarget.src = 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1000&q=80';
+                  else if (img.category === 'Gym') e.currentTarget.src = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80';
+                  else if (img.category === 'Club') e.currentTarget.src = 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80';
+                  else e.currentTarget.src = 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1000&q=80';
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
 

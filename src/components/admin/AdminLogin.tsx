@@ -111,13 +111,27 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onBackToPublic, onLoginS
           
           {/* Logo & Heading */}
           <div className="text-center mb-8">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white mx-auto mb-3 shadow-lg shadow-emerald-900/40">
-              <Trophy className="w-6 h-6" />
+            <div className="w-16 h-16 rounded-full overflow-hidden mx-auto mb-3 shadow-xl drop-shadow-[0_0_15px_rgba(234,179,8,0.35)] bg-slate-900 border border-amber-500/40 p-0.5">
+              <img 
+                src="/logo.png" 
+                alt="Sivan Sportz Club Logo" 
+                className="w-full h-full object-contain rounded-full"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                }}
+              />
+              <div className="hidden w-full h-full rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white">
+                <Trophy className="w-6 h-6" />
+              </div>
             </div>
             <h1 className="font-heading font-black text-2xl text-white">
-              Sivan Sports Club
+              Sivan Sportz Club
             </h1>
-            <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider mt-0.5">
+            <div className="text-xs font-bold text-amber-400 font-sans mt-0.5">
+              சிவன் ஸ்போர்ட்ஸ் கிளப் • Cumbum
+            </div>
+            <div className="text-[11px] font-semibold text-emerald-400 uppercase tracking-wider mt-1">
               Management & Admin Portal
             </div>
             <p className="text-slate-400 text-xs mt-1">

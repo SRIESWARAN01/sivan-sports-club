@@ -65,6 +65,12 @@ export const FacilitiesGrid: React.FC<FacilitiesGridProps> = ({ onOpenEnquiry })
                   alt={`Sivan Sports Club ${fac.name}`}
                   className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500"
                   loading="lazy"
+                  onError={(e) => {
+                    if (fac.category === 'badminton') e.currentTarget.src = 'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=1200&q=80';
+                    else if (fac.category === 'pool') e.currentTarget.src = 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1200&q=80';
+                    else if (fac.category === 'gym') e.currentTarget.src = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80';
+                    else if (fac.category === 'event') e.currentTarget.src = 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80';
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-black/30" />
                 

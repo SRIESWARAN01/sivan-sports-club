@@ -3,10 +3,16 @@ import { DatabaseProvider, useDatabase } from './context/DatabaseContext';
 import { PublicWebsite } from './components/public/PublicWebsite';
 import { AdminLogin } from './components/admin/AdminLogin';
 import { AdminLayout } from './components/admin/AdminLayout';
+import { IntroAnimation } from './components/public/IntroAnimation';
 
 const AppContent: React.FC = () => {
   const { currentAdminUser, logout } = useDatabase();
   const [currentView, setCurrentView] = useState<'public' | 'admin-login' | 'admin-dashboard'>('public');
+  const [showIntro, setShowIntro] = useState<boolean>(() => {
+    // Only show intro animation once per session, and only if not directly navigating to #admin
+    if (window.location.hash.startsWith('#admin')) return false;
+    return !sessionStorage.getItem('sivan_intro_shown');
+  });
 
   // Listen to hash changes for easy deep linking (#admin or #login)
   useEffect(() => {
@@ -72,7 +78,19 @@ const AppContent: React.FC = () => {
     );
   }
 
-  return <PublicWebsite onOpenAdmin={handleOpenAdmin} />;
+  return (
+    <>
+      {showIntro && (
+        <IntroAnimation
+          onComplete={() => {
+            sessionStorage.setItem('sivan_intro_shown', 'true');
+            setShowIntro(false);
+          }}
+        />
+      )}
+      <PublicWebsite onOpenAdmin={handleOpenAdmin} />
+    </>
+  );
 };
 
 export function App() {

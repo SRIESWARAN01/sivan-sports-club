@@ -30,12 +30,15 @@ export interface Customer {
 export interface Facility {
   id: string;
   name: string;
+  subBrand: string;
+  badge: string;
   category: 'badminton' | 'arena' | 'gym' | 'pool' | 'event';
   description: string;
   hourlyRate: number;
   bookingDurationMin: number;
   image: string;
   features: string[];
+  coachingPrograms?: string[];
   availability: string;
   pricingNote: string;
   status: 'active' | 'inactive';
@@ -187,6 +190,9 @@ export interface WebsiteContent {
   heroImageUrl: string;
   aboutTitle: string;
   aboutContent: string;
+  establishedYear: string;
+  vision: string;
+  mission: string;
   address: string;
   landmark: string;
   city: string;
@@ -198,6 +204,7 @@ export interface WebsiteContent {
   whatsapp: string;
   instagram: string;
   facebook: string;
+  openingHours: string;
   seoTitle: string;
   seoDescription: string;
 }

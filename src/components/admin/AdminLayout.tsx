@@ -197,15 +197,26 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ onBackToPublic, onLogo
           <div className="p-4 space-y-6 flex-1 overflow-y-auto">
             {/* Brand Logo in Admin */}
             <div className="flex items-center gap-3 px-2 py-2">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white shadow-md shadow-emerald-900/40">
-                <Trophy className="w-5 h-5" />
+              <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center shrink-0 bg-slate-900 border border-amber-500/40 drop-shadow-[0_0_8px_rgba(234,179,8,0.25)]">
+                <img 
+                  src="/logo.png" 
+                  alt="Sivan Sportz Club Logo" 
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                  }}
+                />
+                <div className="hidden w-full h-full bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white">
+                  <Trophy className="w-5 h-5" />
+                </div>
               </div>
               <div>
                 <div className="font-heading font-black text-sm tracking-wider text-white">
-                  SIVAN SPORTS
+                  SIVAN SPORTZ
                 </div>
-                <div className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest">
-                  Admin Portal
+                <div className="text-[10px] text-amber-400 font-bold uppercase tracking-wider font-sans">
+                  சிவன் ஸ்போர்ட்ஸ் • Admin
                 </div>
               </div>
             </div>
@@ -285,7 +296,15 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ onBackToPublic, onLogo
             <div className="w-72 bg-slate-950 h-full p-4 flex flex-col justify-between overflow-y-auto">
               <div className="space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-                  <div className="font-heading font-black text-white text-base">SIVAN SPORTS CLUB</div>
+                  <div className="flex items-center gap-2.5">
+                    <img 
+                      src="/logo.png" 
+                      alt="Sivan Sportz" 
+                      className="w-7 h-7 object-contain rounded-full" 
+                      onError={e => { e.currentTarget.style.display = 'none'; }}
+                    />
+                    <div className="font-heading font-black text-white text-base">SIVAN SPORTZ</div>
+                  </div>
                   <button onClick={() => setMobileSidebarOpen(false)} className="p-1 text-slate-400 hover:text-white">
                     <X className="w-5 h-5" />
                   </button>

@@ -22,23 +22,36 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
           {/* Brand Info */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white">
-                <Trophy className="w-5 h-5" />
+              <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center shrink-0 bg-slate-900 border border-amber-500/30 drop-shadow-[0_0_12px_rgba(234,179,8,0.25)]">
+                <img 
+                  src="/logo.png" 
+                  alt="Sivan Sportz Club Logo" 
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                  }}
+                />
+                <div className="hidden w-full h-full bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white">
+                  <Trophy className="w-5 h-5" />
+                </div>
               </div>
               <div>
                 <span className="font-heading font-black text-xl text-white tracking-wider">
-                  SIVAN SPORTS CLUB
+                  SIVAN SPORTZ CLUB
                 </span>
-                <div className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest">
-                  Cumbum • Theni District
+                <div className="text-[11px] text-amber-400 font-bold uppercase tracking-widest flex items-center gap-1.5 font-sans">
+                  <span>சிவன் ஸ்போர்ட்ஸ் கிளப்</span>
+                  <span>•</span>
+                  <span>Cumbum</span>
                 </div>
               </div>
             </div>
 
             <p className="text-slate-400 text-sm max-w-sm leading-relaxed">
-              "Sport. Fitness. Recreation. Celebrations."
+              "Play. Train. Celebrate. Live Better."
               <br />
-              A premium destination bringing health, active living, and memorable community events under one roof in Cumbum, Tamil Nadu.
+              Cumbum's premier multi-sport hub featuring Rayan Badminton Academy, Silver Wave Pool, Iron Empire Gym, Sports Arena, and Party Venues.
             </p>
 
             {/* Social Icons */}
@@ -133,7 +146,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
-            © 2026 Sivan Sports Club. All Rights Reserved. Cumbum, Theni District.
+            © 2026 Sivan Sportz Club (சிவன் ஸ்போர்ட்ஸ் கிளப்). All Rights Reserved. Cumbum, Theni District.
           </div>
           <button
             onClick={scrollToTop}

@@ -14,21 +14,24 @@ export const EventsSpotlight: React.FC<EventsProps> = ({ onOpenEnquiry }) => {
           
           {/* Left Column: Visual */}
           <div className="lg:col-span-6 relative">
-            <div className="relative rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl">
+            <div className="relative rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl bg-slate-950">
               <img
-                src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80"
-                alt="Party Hall & Event Space at Sivan Sports Club Cumbum"
-                className="w-full h-[450px] sm:h-[520px] object-cover object-center"
+                src="/images/swimming_championship_banner.jpg"
+                onError={(e) => {
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80';
+                }}
+                alt="Theni Revenue District Swimming Competition at Sivan Sports Club Cumbum"
+                className="w-full h-[450px] sm:h-[520px] object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent" />
               
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-950/80 backdrop-blur-md border border-slate-800 flex items-center justify-between">
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-slate-800 flex items-center justify-between">
                 <div>
-                  <div className="text-xs font-semibold text-purple-400">Air-Conditioned Banquet Space</div>
-                  <div className="text-white font-bold text-sm">Custom Seating & Buffet Area</div>
+                  <div className="text-xs font-semibold text-amber-400">Theni District Tournament Host</div>
+                  <div className="text-white font-bold text-sm">Competitions, Banquets & Family Celebrations</div>
                 </div>
-                <div className="px-3 py-1 rounded-lg bg-purple-500/10 text-purple-400 text-xs font-bold font-mono">
-                  AV Equipped
+                <div className="px-3 py-1 rounded-lg bg-amber-500/10 text-amber-400 text-xs font-bold font-mono">
+                  District Level
                 </div>
               </div>
             </div>

@@ -16,15 +16,18 @@ export const GymSpotlight: React.FC<GymProps> = ({ onOpenEnquiry }) => {
           <div className="lg:col-span-6 relative">
             <div className="relative rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80"
-                alt="Gym & Fitness Center at Sivan Sports Club Cumbum"
+                src="/images/iron_empire_gym_board.jpg"
+                onError={(e) => {
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80';
+                }}
+                alt="Iron Empire Fitness Studio at Sivan Sports Club Cumbum"
                 className="w-full h-[450px] sm:h-[520px] object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent" />
               
               <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-950/80 backdrop-blur-md border border-slate-800">
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">Fitness Center</span>
+                  <span className="text-xs font-bold text-red-400 uppercase tracking-wider">Iron Empire Fitness Studio</span>
                   <span className="text-xs font-mono text-slate-300">Daily 5:30 AM - 9:30 PM</span>
                 </div>
                 <div className="text-white font-heading font-bold text-lg">
