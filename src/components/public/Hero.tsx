@@ -86,18 +86,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry }) => {
               <Trophy className="w-4 h-4" />
             </div>
             <div>
-              <div className="text-xs text-slate-400">Indoor Courts</div>
+              <div className="text-xs text-slate-400">Rayan Academy</div>
               <div className="text-sm font-bold text-white">Badminton</div>
             </div>
           </div>
 
           <div className="flex items-center gap-3 p-3 sm:p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 backdrop-blur-sm">
-            <div className="w-9 h-9 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+            <div className="w-9 h-9 rounded-lg bg-red-500/10 flex items-center justify-center text-red-400">
               <Activity className="w-4 h-4" />
             </div>
             <div>
-              <div className="text-xs text-slate-400">Strength & Cardio</div>
-              <div className="text-sm font-bold text-white">Gym & Fitness</div>
+              <div className="text-xs text-slate-400">Iron Empire</div>
+              <div className="text-sm font-bold text-white">Fitness Studio</div>
             </div>
           </div>
 
@@ -106,18 +106,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry }) => {
               <Waves className="w-4 h-4" />
             </div>
             <div>
-              <div className="text-xs text-slate-400">Crystal Clean</div>
+              <div className="text-xs text-slate-400">Silver Wave</div>
               <div className="text-sm font-bold text-white">Swimming Pool</div>
             </div>
           </div>
 
           <div className="flex items-center gap-3 p-3 sm:p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 backdrop-blur-sm">
-            <div className="w-9 h-9 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400">
+            <div className="w-9 h-9 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400">
               <Sparkles className="w-4 h-4" />
             </div>
             <div>
-              <div className="text-xs text-slate-400">Grand Celebrations</div>
-              <div className="text-sm font-bold text-white">Party Hall</div>
+              <div className="text-xs text-slate-400">Grand Events</div>
+              <div className="text-sm font-bold text-white">Party & Arena</div>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Trophy, CheckCircle2, Calendar, ShieldCheck, Flame } from 'lucide-react';
+import { RayanSportsLogo } from '../common/RayanSportsLogo';
 
 interface SpotlightProps {
   onOpenEnquiry: (fac: string) => void;
@@ -23,9 +24,14 @@ export const BadmintonSpotlight: React.FC<SpotlightProps> = ({ onOpenEnquiry }) 
                 alt="Rayan Sports Academy Badminton Court at Sivan Sports Club Cumbum"
                 className="w-full h-[450px] sm:h-[520px] object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-black/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-transparent to-black/30" />
               
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-950/80 backdrop-blur-md border border-slate-800 flex items-center justify-between">
+              {/* Official Rayan Sports Academy Floating Badge */}
+              <div className="absolute top-5 right-5 p-3 rounded-2xl bg-slate-950/90 backdrop-blur-md border border-cyan-500/40 shadow-2xl">
+                <RayanSportsLogo className="w-40 sm:w-48 h-auto" showTagline={false} />
+              </div>
+
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-slate-800 flex items-center justify-between">
                 <div>
                   <div className="text-xs font-semibold text-emerald-400">Rayan Sports Academy</div>
                   <div className="text-white font-bold text-sm">"Serve with Passion - Play with Pride"</div>
@@ -45,8 +51,8 @@ export const BadmintonSpotlight: React.FC<SpotlightProps> = ({ onOpenEnquiry }) 
 
           {/* Right Column: Copy & Highlights */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold tracking-wider uppercase">
-              Rayan Badminton Academy
+            <div className="flex items-center gap-3">
+              <RayanSportsLogo className="w-44 sm:w-56 h-auto" />
             </div>
 
             <h2 className="font-heading font-black text-3xl sm:text-5xl text-white tracking-tight">

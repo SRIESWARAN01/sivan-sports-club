@@ -13,10 +13,27 @@ import {
 } from 'lucide-react';
 import { useDatabase } from '../../../context/DatabaseContext';
 import type { Facility } from '../../../types/database';
+import { BrandLogo } from '../../common/BrandLogo';
+import { IronEmpireLogo } from '../../common/IronEmpireLogo';
+import { RayanSportsLogo } from '../../common/RayanSportsLogo';
+import { SilverWaveLogo } from '../../common/SilverWaveLogo';
 
 export const FacilitiesView: React.FC = () => {
   const { facilities, updateFacility, toggleFacilityStatus } = useDatabase();
   const [editingFacility, setEditingFacility] = useState<Facility | null>(null);
+
+  const renderFacilityLogo = (category: string) => {
+    switch (category) {
+      case 'badminton':
+        return <RayanSportsLogo className="w-24 h-auto" showTagline={false} />;
+      case 'pool':
+        return <SilverWaveLogo className="w-16 h-auto" />;
+      case 'gym':
+        return <IronEmpireLogo className="w-8 h-8" />;
+      default:
+        return <BrandLogo className="w-8 h-8" />;
+    }
+  };
 
   const handleSaveEdit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -87,6 +104,12 @@ export const FacilitiesView: React.FC = () => {
             {/* Body */}
             <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
               <div>
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wider">{fac.subBrand}</span>
+                  <div className="p-1 rounded-lg bg-slate-950/80 border border-slate-800">
+                    {renderFacilityLogo(fac.category)}
+                  </div>
+                </div>
                 <h3 className="font-heading font-black text-xl text-white mb-1.5">
                   {fac.name}
                 </h3>

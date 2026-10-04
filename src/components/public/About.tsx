@@ -11,6 +11,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { useDatabase } from '../../context/DatabaseContext';
+import { BrandLogo } from '../common/BrandLogo';
 
 export const About: React.FC = () => {
   const { websiteContent } = useDatabase();
@@ -46,36 +47,53 @@ export const About: React.FC = () => {
         {/* 2-Column Responsive Layout (Two columns on desktop, single column on mobile) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Left Column: Visual History & Establishment Card */}
+          {/* Left Column: Official Emblem & Establishment Showcase */}
           <div className="lg:col-span-6 space-y-8">
-            <div className="relative rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl group">
-              <img
-                src="/images/sivan_sports_entrance.jpg"
-                onError={(e) => {
-                  e.currentTarget.src = 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80';
-                }}
-                alt="Sivan Sportz Club Main Entrance & Reception Cumbum"
-                className="w-full h-[400px] sm:h-[460px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent" />
+            <div className="relative rounded-3xl overflow-hidden border border-amber-500/40 bg-gradient-to-b from-slate-900 via-[#071638] to-slate-950 p-8 sm:p-12 shadow-2xl flex flex-col items-center justify-center text-center group">
+              {/* Radial Golden & Azure Glow */}
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-500/10 via-blue-600/10 to-transparent pointer-events-none" />
 
               {/* Establishment Year Overlay Badge */}
-              <div className="absolute top-6 left-6 p-4 rounded-2xl bg-emerald-500 text-slate-950 font-bold shadow-xl flex items-center gap-3">
-                <Calendar className="w-6 h-6 text-slate-950" />
-                <div>
-                  <div className="text-[10px] uppercase font-bold tracking-wider text-emerald-950">Established</div>
-                  <div className="text-xl font-heading font-black">YEAR {websiteContent.establishedYear || '2018'}</div>
-                </div>
+              <div className="absolute top-5 left-5 px-3.5 py-1.5 rounded-2xl bg-amber-500/15 border border-amber-500/40 text-amber-400 font-bold shadow-lg flex items-center gap-2">
+                <Calendar className="w-4 h-4 text-amber-400" />
+                <span className="text-xs font-mono">ESTD. {websiteContent.establishedYear || '2018'}</span>
               </div>
 
-              {/* Location Badge bottom */}
-              <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-700/70">
-                <div className="flex items-center gap-2 text-xs uppercase font-bold text-emerald-400 tracking-wider mb-1">
-                  <MapPin className="w-3.5 h-3.5" />
-                  <span>Kalaivanar Street, Cumbum</span>
+              {/* Certified Emblem Badge */}
+              <div className="absolute top-5 right-5 px-3 py-1.5 rounded-2xl bg-blue-500/15 border border-blue-500/40 text-cyan-300 font-bold text-xs shadow-lg flex items-center gap-1.5">
+                <Award className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Official Crest</span>
+              </div>
+
+              {/* Accurate Official Sivan Sportz Club Emblem */}
+              <div className="relative my-4 transform group-hover:scale-105 transition-transform duration-500">
+                <BrandLogo className="w-56 h-56 sm:w-72 sm:h-72 drop-shadow-[0_15px_35px_rgba(234,179,8,0.25)]" />
+              </div>
+
+              {/* Official Brand Typography */}
+              <div className="relative mt-2 space-y-1">
+                <h3 className="font-heading font-black text-2xl sm:text-3xl text-white tracking-wide">
+                  SIVAN SPORTZ CLUB
+                </h3>
+                <div className="text-amber-400 font-bold text-sm tracking-wide">
+                  சிவன் ஸ்போர்ட்ஸ் கிளப்
                 </div>
-                <div className="text-white font-heading font-bold text-lg sm:text-xl">
-                  Near Thambis Theatre • Theni District, Tamil Nadu
+                <p className="text-xs text-slate-300 max-w-sm mx-auto pt-1">
+                  Badminton • Swimming Pool • Fitness Studio • Sports Arena • Banquets
+                </p>
+              </div>
+
+              {/* Location Footer Bar */}
+              <div className="relative mt-6 w-full p-3.5 rounded-2xl bg-slate-950/80 backdrop-blur-md border border-slate-800 text-left flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2.5">
+                  <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <div className="text-xs text-slate-300">
+                    <span className="font-semibold text-white block">Kalaivanar Street, Near Thambis Theatre</span>
+                    <span className="text-slate-400">Cumbum - 625516, Theni District</span>
+                  </div>
+                </div>
+                <div className="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 text-[10px] font-mono font-bold whitespace-nowrap">
+                  Theni DT
                 </div>
               </div>
             </div>

@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { useDatabase } from '../../../context/DatabaseContext';
 import type { GymMembership } from '../../../types/database';
+import { IronEmpireLogo } from '../../common/IronEmpireLogo';
 
 export const MembershipsView: React.FC = () => {
   const { gymMemberships, membershipPlans, renewGymMembership, addGymMembership } = useDatabase();
@@ -80,13 +81,17 @@ export const MembershipsView: React.FC = () => {
       
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-slate-900/60 p-6 rounded-3xl border border-slate-800">
-        <div>
-          <h1 className="font-heading font-black text-2xl text-white">
-            Gym & Fitness Memberships
-          </h1>
-          <p className="text-slate-400 text-xs mt-0.5">
-            Active subscriptions, plan renewals, and expiration tracking
-          </p>
+        <div className="flex items-center gap-4">
+          <IronEmpireLogo className="w-14 h-14 shrink-0 drop-shadow-md" />
+          <div>
+            <div className="text-[11px] font-bold text-red-400 uppercase tracking-widest">Iron Empire Fitness Studio</div>
+            <h1 className="font-heading font-black text-2xl text-white">
+              Gym & Fitness Memberships
+            </h1>
+            <p className="text-slate-400 text-xs mt-0.5">
+              Active subscriptions, plan renewals, and expiration tracking
+            </p>
+          </div>
         </div>
 
         <button

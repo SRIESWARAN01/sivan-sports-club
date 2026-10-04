@@ -83,7 +83,9 @@ export const INITIAL_FACILITIES: Facility[] = [
     availability: '05:30 AM - 10:30 PM',
     pricingNote: 'Hourly court booking rates. Monthly & quarterly coaching packages available.',
     status: 'active',
-    rules: ['Non-marking badminton shoes strictly mandatory', 'Warm-up in designated zone only', 'Maintain time slot discipline']
+    rules: ['Non-marking badminton shoes strictly mandatory', 'Warm-up in designated zone only', 'Maintain time slot discipline'],
+    logoUrl: '/images/rayan_sports_logo.png',
+    slogan: 'Serve with Passion • Play with Pride'
   },
   {
     id: 'fac_pool',
@@ -112,7 +114,9 @@ export const INITIAL_FACILITIES: Facility[] = [
     availability: '06:00 AM - 11:00 AM & 03:30 PM - 07:30 PM',
     pricingNote: 'Hourly swim slots, monthly passes, and family weekend packages.',
     status: 'active',
-    rules: ['Proper nylon/spandex swimwear mandatory', 'Shower prior to pool entry', 'Children must be accompanied by adults']
+    rules: ['Proper nylon/spandex swimwear mandatory', 'Shower prior to pool entry', 'Children must be accompanied by adults'],
+    logoUrl: '/images/silver_wave_logo.png',
+    slogan: 'Crystal Water • Pure Energy'
   },
   {
     id: 'fac_gym',
@@ -140,7 +144,9 @@ export const INITIAL_FACILITIES: Facility[] = [
     availability: '05:30 AM - 12:00 PM & 04:30 PM - 09:30 PM',
     pricingNote: 'Monthly, quarterly, and annual subscription packages.',
     status: 'active',
-    rules: ['Carry personal sweat towel', 'Re-rack all weights and dumbbells after use']
+    rules: ['Carry personal sweat towel', 'Re-rack all weights and dumbbells after use'],
+    logoUrl: '/images/iron_empire_logo.png',
+    slogan: 'Train Strong • Feel Strong'
   },
   {
     id: 'fac_event',
@@ -168,7 +174,9 @@ export const INITIAL_FACILITIES: Facility[] = [
     availability: '08:00 AM - 11:00 PM',
     pricingNote: 'Custom session & full-day rental quotations with advance booking.',
     status: 'active',
-    rules: ['Prior advance deposit required to confirm slot', 'Music volume subject to municipal regulations']
+    rules: ['Prior advance deposit required to confirm slot', 'Music volume subject to municipal regulations'],
+    logoUrl: '/logo.png',
+    slogan: 'Celebrate Every Milestone in Grandeur'
   },
   {
     id: 'fac_arena',
@@ -196,7 +204,9 @@ export const INITIAL_FACILITIES: Facility[] = [
     availability: '06:00 AM - 10:00 PM',
     pricingNote: 'Hourly squad booking rates. Tournament packages available.',
     status: 'active',
-    rules: ['Proper athletic sports shoes mandatory', 'Team slots should be booked 24h prior']
+    rules: ['Proper athletic sports shoes mandatory', 'Team slots should be booked 24h prior'],
+    logoUrl: '/logo.png',
+    slogan: 'Unleash Your Athletic Spirit'
   }
 ];
 

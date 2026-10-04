@@ -11,6 +11,10 @@ import {
   ArrowRight
 } from 'lucide-react';
 import type { Facility } from '../../types/database';
+import { BrandLogo } from '../common/BrandLogo';
+import { IronEmpireLogo } from '../common/IronEmpireLogo';
+import { RayanSportsLogo } from '../common/RayanSportsLogo';
+import { SilverWaveLogo } from '../common/SilverWaveLogo';
 
 interface ServiceDetailModalProps {
   facility: Facility | null;
@@ -24,6 +28,19 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
   onEnquire 
 }) => {
   if (!facility) return null;
+
+  const renderModalLogo = (category: string) => {
+    switch (category) {
+      case 'badminton':
+        return <RayanSportsLogo className="w-32 h-auto" showTagline={false} />;
+      case 'pool':
+        return <SilverWaveLogo className="w-24 h-auto" />;
+      case 'gym':
+        return <IronEmpireLogo className="w-11 h-11" />;
+      default:
+        return <BrandLogo className="w-10 h-10" />;
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
@@ -43,17 +60,22 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-xl bg-slate-950/80 text-slate-300 hover:text-white backdrop-blur-md transition-colors"
+            className="absolute top-4 right-4 p-2 rounded-xl bg-slate-950/80 text-slate-300 hover:text-white backdrop-blur-md transition-colors z-10"
             aria-label="Close details"
           >
             <X className="w-5 h-5" />
           </button>
 
-          {/* Facility Badge */}
-          <div className="absolute top-4 left-4">
+          {/* Facility Badge & Logo */}
+          <div className="absolute top-4 left-4 flex items-center gap-2">
             <span className="px-3 py-1 rounded-full bg-emerald-500 text-slate-950 font-bold text-xs shadow-lg">
               {facility.badge}
             </span>
+          </div>
+
+          {/* Sub-brand Floating Logo */}
+          <div className="absolute top-4 right-16 p-2 rounded-2xl bg-slate-950/90 backdrop-blur-md border border-slate-700/80 shadow-xl flex items-center justify-center">
+            {renderModalLogo(facility.category)}
           </div>
 
           <div className="absolute bottom-4 left-6 right-6 flex items-end justify-between">

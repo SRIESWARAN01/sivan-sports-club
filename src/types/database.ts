@@ -43,6 +43,8 @@ export interface Facility {
   pricingNote: string;
   status: 'active' | 'inactive';
   rules?: string[];
+  logoUrl?: string;
+  slogan?: string;
 }
 
 export type BookingStatus = 'pending' | 'confirmed' | 'completed' | 'cancelled';

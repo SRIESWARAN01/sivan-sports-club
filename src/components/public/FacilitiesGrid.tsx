@@ -8,6 +8,10 @@ import {
 } from 'lucide-react';
 import { useDatabase } from '../../context/DatabaseContext';
 import type { Facility } from '../../types/database';
+import { BrandLogo } from '../common/BrandLogo';
+import { IronEmpireLogo } from '../common/IronEmpireLogo';
+import { RayanSportsLogo } from '../common/RayanSportsLogo';
+import { SilverWaveLogo } from '../common/SilverWaveLogo';
 
 interface FacilitiesGridProps {
   onOpenEnquiry: (facilityName?: string) => void;
@@ -15,6 +19,19 @@ interface FacilitiesGridProps {
 
 export const FacilitiesGrid: React.FC<FacilitiesGridProps> = ({ onOpenEnquiry }) => {
   const { facilities } = useDatabase();
+
+  const renderFacilityLogo = (category: string) => {
+    switch (category) {
+      case 'badminton':
+        return <RayanSportsLogo className="w-28 sm:w-32 h-auto" showTagline={false} />;
+      case 'pool':
+        return <SilverWaveLogo className="w-20 sm:w-24 h-auto" />;
+      case 'gym':
+        return <IronEmpireLogo className="w-9 h-9" />;
+      default:
+        return <BrandLogo className="w-9 h-9" />;
+    }
+  };
 
   const ctaLabels: Record<string, string> = {
     fac_badminton: 'Explore Badminton',
@@ -79,6 +96,11 @@ export const FacilitiesGrid: React.FC<FacilitiesGridProps> = ({ onOpenEnquiry })
                   CARD 0{idx + 1}
                 </div>
 
+                {/* Brand Logo Floating Badge */}
+                <div className="absolute top-3 right-3 p-1.5 rounded-2xl bg-slate-950/90 backdrop-blur-md border border-slate-700/80 shadow-xl flex items-center justify-center">
+                  {renderFacilityLogo(fac.category)}
+                </div>
+
                 {/* Operating hours */}
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-slate-300 bg-slate-950/80 backdrop-blur-md px-3 py-1.5 rounded-xl border border-slate-800">
                   <span className="flex items-center gap-1.5 text-slate-300">
@@ -94,6 +116,10 @@ export const FacilitiesGrid: React.FC<FacilitiesGridProps> = ({ onOpenEnquiry })
               {/* Card Body */}
               <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
                 <div>
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider">{fac.subBrand}</span>
+                    <span className="px-2 py-0.5 rounded-full bg-slate-800 text-[10px] font-bold text-slate-300 border border-slate-700">{fac.badge}</span>
+                  </div>
                   <h3 className="font-heading font-black text-2xl text-white mb-2 group-hover:text-emerald-400 transition-colors">
                     {fac.name}
                   </h3>

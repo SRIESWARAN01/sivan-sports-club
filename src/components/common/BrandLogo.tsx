@@ -101,18 +101,20 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
           {/* 2. Deep Navy Blue Field */}
           <circle cx="200" cy="200" r="180" fill="url(#navyRingGrad)" stroke="#fef08a" strokeWidth="2" />
 
-          {/* 3. Golden Stars along outer ring */}
-          {/* Left stars */}
-          <path d="M 68 188 l 3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
-          <path d="M 72 230 l 3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
-          <path d="M 90 270 l 3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
-          <path d="M 120 305 l 3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
+          {/* 3. Golden Stars along outer ring (5 on left, 5 on right, exactly matching official crest) */}
+          {/* Left 5 stars */}
+          <path d="M 75 185 l 3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
+          <path d="M 72 222 l 3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
+          <path d="M 82 258 l 3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
+          <path d="M 102 290 l 3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
+          <path d="M 135 316 l 3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
 
-          {/* Right stars */}
-          <path d="M 332 188 l 3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
-          <path d="M 328 230 l 3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
-          <path d="M 310 270 l 3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
-          <path d="M 280 305 l 3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
+          {/* Right 5 stars */}
+          <path d="M 325 185 l 3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
+          <path d="M 328 222 l 3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
+          <path d="M 318 258 l 3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
+          <path d="M 298 290 l 3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
+          <path d="M 265 316 l 3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
 
           {/* 4. Arched Text: SIVAN SPORTZ CLUB */}
           <text fill="#ffffff" fontSize="27" fontWeight="900" fontFamily="sans-serif" letterSpacing="5">

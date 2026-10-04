@@ -1,5 +1,6 @@
 import React from 'react';
 import { Dumbbell, HeartPulse, Shield, Calendar, ArrowRight } from 'lucide-react';
+import { IronEmpireLogo } from '../common/IronEmpireLogo';
 
 interface GymProps {
   onOpenEnquiry: (fac: string) => void;
@@ -25,6 +26,15 @@ export const GymSpotlight: React.FC<GymProps> = ({ onOpenEnquiry }) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent" />
               
+              {/* Official Iron Empire Floating Badge */}
+              <div className="absolute top-5 right-5 p-3 rounded-2xl bg-slate-950/90 backdrop-blur-md border border-red-500/40 shadow-2xl flex items-center gap-3">
+                <IronEmpireLogo className="w-12 h-12 shrink-0 drop-shadow-md" />
+                <div className="pr-2">
+                  <div className="text-[10px] uppercase font-bold tracking-wider text-red-400">Official Fitness Studio</div>
+                  <div className="text-xs font-heading font-black text-white">IRON EMPIRE</div>
+                </div>
+              </div>
+
               <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-950/80 backdrop-blur-md border border-slate-800">
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-xs font-bold text-red-400 uppercase tracking-wider">Iron Empire Fitness Studio</span>
@@ -39,8 +49,14 @@ export const GymSpotlight: React.FC<GymProps> = ({ onOpenEnquiry }) => {
 
           {/* Right Column: Copy & Feature Categories */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold tracking-wider uppercase">
-              Strength & Wellness
+            <div className="flex items-center gap-3">
+              <IronEmpireLogo className="w-16 h-16 shrink-0" />
+              <div>
+                <span className="px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-bold tracking-wider uppercase">
+                  Iron Empire Fitness Studio
+                </span>
+                <h3 className="text-lg font-black text-white tracking-wide mt-1">SIVAN SPORTS CLUB</h3>
+              </div>
             </div>
 
             <h2 className="font-heading font-black text-3xl sm:text-5xl text-white tracking-tight">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Waves, Sparkles, CheckCircle2, Calendar, ShieldCheck } from 'lucide-react';
-import { BrandLogo } from '../common/BrandLogo';
+import { SilverWaveLogo } from '../common/SilverWaveLogo';
 
 interface PoolProps {
   onOpenEnquiry: (fac: string) => void;
@@ -15,12 +15,12 @@ export const PoolSpotlight: React.FC<PoolProps> = ({ onOpenEnquiry }) => {
           
           {/* Left Column: Copy */}
           <div className="lg:col-span-6 space-y-6 order-2 lg:order-1">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold tracking-wider uppercase">
-              Aquatics & Wellness
+            <div className="flex items-center gap-3">
+              <SilverWaveLogo className="w-44 sm:w-56 h-auto" />
             </div>
 
             <h2 className="font-heading font-black text-3xl sm:text-5xl text-white tracking-tight">
-              Make a Splash.
+              Make a Splash. <br />Refresh & Revitalize.
             </h2>
 
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
@@ -67,13 +67,9 @@ export const PoolSpotlight: React.FC<PoolProps> = ({ onOpenEnquiry }) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent" />
               
-              {/* Official Silver Wave Seal Floating Badge */}
-              <div className="absolute top-6 right-6 p-2 rounded-2xl bg-slate-950/90 backdrop-blur-md border border-amber-500/40 shadow-xl flex items-center gap-3">
-                <BrandLogo className="w-12 h-12 shrink-0 drop-shadow-md" />
-                <div className="pr-2">
-                  <div className="text-[10px] uppercase font-bold tracking-wider text-amber-400">Official Partner</div>
-                  <div className="text-xs font-heading font-black text-white">Silverwave Club</div>
-                </div>
+              {/* Official Silver Wave Floating Badge */}
+              <div className="absolute top-5 right-5 p-3 rounded-2xl bg-slate-950/90 backdrop-blur-md border border-cyan-500/40 shadow-2xl">
+                <SilverWaveLogo className="w-36 sm:w-44 h-auto" />
               </div>
 
               {/* Tournament Recognition Banner */}
