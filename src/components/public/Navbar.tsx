@@ -10,6 +10,8 @@ import {
 } from 'lucide-react';
 import { useDatabase } from '../../context/DatabaseContext';
 
+import { BrandLogo } from '../common/BrandLogo';
+
 interface NavbarProps {
   onOpenEnquiry: (facility?: string) => void;
   onOpenAdmin: () => void;
@@ -55,20 +57,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry, onOpenAdmin }) =>
           
           {/* Brand Logo */}
           <a href="#home" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 rounded-full overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(234,179,8,0.35)] shrink-0 bg-slate-900 border border-amber-500/30">
-              <img 
-                src="/logo.png" 
-                alt="Sivan Sportz Club Logo" 
-                className="w-full h-full object-contain"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                }}
-              />
-              <div className="hidden w-full h-full bg-gradient-to-br from-blue-700 via-emerald-600 to-teal-800 flex items-center justify-center text-white">
-                <Trophy className="w-5 h-5" />
-              </div>
-            </div>
+            <BrandLogo className="w-12 h-12 group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_12px_rgba(234,179,8,0.35)] shrink-0" />
             <div>
               <div className="font-heading font-black text-lg sm:text-xl tracking-wider text-white flex items-center gap-1.5">
                 <span>SIVAN SPORTZ</span>

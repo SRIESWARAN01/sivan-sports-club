@@ -46,6 +46,7 @@ import { AdminUsersView } from './views/AdminUsersView';
 import { SettingsView } from './views/SettingsView';
 import { ActivityLogsView } from './views/ActivityLogsView';
 import type { Role } from '../../types/database';
+import { BrandLogo } from '../common/BrandLogo';
 
 interface AdminLayoutProps {
   onBackToPublic: () => void;
@@ -197,20 +198,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ onBackToPublic, onLogo
           <div className="p-4 space-y-6 flex-1 overflow-y-auto">
             {/* Brand Logo in Admin */}
             <div className="flex items-center gap-3 px-2 py-2">
-              <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center shrink-0 bg-slate-900 border border-amber-500/40 drop-shadow-[0_0_8px_rgba(234,179,8,0.25)]">
-                <img 
-                  src="/logo.png" 
-                  alt="Sivan Sportz Club Logo" 
-                  className="w-full h-full object-contain"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                  }}
-                />
-                <div className="hidden w-full h-full bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white">
-                  <Trophy className="w-5 h-5" />
-                </div>
-              </div>
+              <BrandLogo className="w-10 h-10 shrink-0 drop-shadow-[0_0_8px_rgba(234,179,8,0.25)]" />
               <div>
                 <div className="font-heading font-black text-sm tracking-wider text-white">
                   SIVAN SPORTZ
@@ -297,12 +285,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ onBackToPublic, onLogo
               <div className="space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-slate-800">
                   <div className="flex items-center gap-2.5">
-                    <img 
-                      src="/logo.png" 
-                      alt="Sivan Sportz" 
-                      className="w-7 h-7 object-contain rounded-full" 
-                      onError={e => { e.currentTarget.style.display = 'none'; }}
-                    />
+                    <BrandLogo className="w-7 h-7 shrink-0" />
                     <div className="font-heading font-black text-white text-base">SIVAN SPORTZ</div>
                   </div>
                   <button onClick={() => setMobileSidebarOpen(false)} className="p-1 text-slate-400 hover:text-white">

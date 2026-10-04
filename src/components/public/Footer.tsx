@@ -2,6 +2,8 @@ import React from 'react';
 import { Trophy, MapPin, MessageCircle, ArrowUp } from 'lucide-react';
 import { useDatabase } from '../../context/DatabaseContext';
 
+import { BrandLogo } from '../common/BrandLogo';
+
 interface FooterProps {
   onOpenAdmin: () => void;
 }
@@ -22,20 +24,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
           {/* Brand Info */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center shrink-0 bg-slate-900 border border-amber-500/30 drop-shadow-[0_0_12px_rgba(234,179,8,0.25)]">
-                <img 
-                  src="/logo.png" 
-                  alt="Sivan Sportz Club Logo" 
-                  className="w-full h-full object-contain"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                  }}
-                />
-                <div className="hidden w-full h-full bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white">
-                  <Trophy className="w-5 h-5" />
-                </div>
-              </div>
+              <BrandLogo className="w-12 h-12 shrink-0 drop-shadow-[0_0_12px_rgba(234,179,8,0.25)]" />
               <div>
                 <span className="font-heading font-black text-xl text-white tracking-wider">
                   SIVAN SPORTZ CLUB

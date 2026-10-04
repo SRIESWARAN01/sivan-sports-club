@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Trophy, Sparkles, ChevronRight, Zap } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
+import { BrandLogo } from '../common/BrandLogo';
 
 interface IntroAnimationProps {
   onComplete: () => void;
@@ -52,22 +53,7 @@ export const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) =>
           <div className="absolute -inset-3 rounded-full border border-cyan-400/30 animate-ping opacity-30" />
 
           {/* Core Official Crest Logo */}
-          <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-full flex items-center justify-center shadow-2xl shadow-blue-600/40 transform transition-transform duration-700 scale-100 hover:scale-105 relative bg-slate-900/60 p-1">
-            <img 
-              src="/logo.png" 
-              alt="Sivan Sportz Club Official Logo" 
-              className="w-full h-full object-contain rounded-full drop-shadow-[0_0_25px_rgba(234,179,8,0.5)] animate-in zoom-in-75 duration-700"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-                e.currentTarget.nextElementSibling?.classList.remove('hidden');
-              }}
-            />
-            {/* Elegant fallback if logo.png not yet placed in public/ */}
-            <div className="hidden w-full h-full rounded-full bg-gradient-to-br from-blue-900 via-slate-900 to-amber-900 border-2 border-amber-400/60 flex flex-col items-center justify-center p-2 text-center">
-              <Trophy className="w-10 h-10 text-amber-400 drop-shadow-md animate-bounce duration-1000 mb-1" />
-              <div className="text-[9px] font-bold text-amber-300 tracking-tighter uppercase">Sivan Sportz</div>
-            </div>
-          </div>
+          <BrandLogo className="w-32 h-32 sm:w-40 sm:h-40 drop-shadow-[0_0_30px_rgba(234,179,8,0.5)] transform transition-transform duration-700 scale-100 hover:scale-105" />
         </div>
 
         {/* Club Name Typography with slide-up reveal */}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Waves, Sparkles, CheckCircle2, Calendar, ShieldCheck } from 'lucide-react';
+import { BrandLogo } from '../common/BrandLogo';
 
 interface PoolProps {
   onOpenEnquiry: (fac: string) => void;
@@ -68,9 +69,7 @@ export const PoolSpotlight: React.FC<PoolProps> = ({ onOpenEnquiry }) => {
               
               {/* Official Silver Wave Seal Floating Badge */}
               <div className="absolute top-6 right-6 p-2 rounded-2xl bg-slate-950/90 backdrop-blur-md border border-amber-500/40 shadow-xl flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 border border-amber-400/50">
-                  <img src="/logo.png" alt="Silver Wave Seal" className="w-full h-full object-contain" onError={e => e.currentTarget.style.display = 'none'} />
-                </div>
+                <BrandLogo className="w-12 h-12 shrink-0 drop-shadow-md" />
                 <div className="pr-2">
                   <div className="text-[10px] uppercase font-bold tracking-wider text-amber-400">Official Partner</div>
                   <div className="text-xs font-heading font-black text-white">Silverwave Club</div>
